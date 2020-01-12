@@ -1,4 +1,4 @@
-//最后来看一个字符程序 
+//最后来看一个字符程序
 #include <stdio.h>
 int main(){
 	char c1='z',c2='j',c3=117;
