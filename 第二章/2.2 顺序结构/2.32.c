@@ -1,7 +1,7 @@
 #include <stdio.h>
-typedef long long LL;//给long long 起个别名LL 
+typedef long long LL;//缁檒ong long 璧蜂釜鍒悕LL 
 int main(){
-	LL a=123456789012345,b=234567890123456;//直接使用LL
+	LL a=123456789012345,b=234567890123456;//鐩存帴浣跨敤LL
 	printf("%lld\n",a+b); 
 	return 0;
 } 
