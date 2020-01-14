@@ -1,8 +1,10 @@
 #include <stdio.h>
-struct Point {
+struct Point{
 	int x,y;
 	Point(){}//用以不经初始化地定义pt[10]
 	Point(int _x,int _y):x(_x),y(_y){}//用以提供x和y的初始化 
+	x=_x;
+	y=_y;
 }pt[10];
 int main(){
 	int num=0,i,j;
