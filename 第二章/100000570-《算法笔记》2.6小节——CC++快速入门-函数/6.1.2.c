@@ -12,7 +12,7 @@ void vowels(char s1[], char s2[]){
 	} 	
 }
 int main(){
-	char s1[100]={0},s2[100]={0};
+	char s1[100],s2[100];
 	gets(s1);
 	vowels(s1,s2);
 	return 0;
