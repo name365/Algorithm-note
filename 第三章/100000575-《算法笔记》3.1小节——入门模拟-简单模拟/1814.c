@@ -6,21 +6,20 @@
 */
 #include <stdio.h>
 int main(){
-	int L,M,i,left,right; //sum是树的个数 
+	int L,M,i,ds1,ds2;
 	while(scanf("%d %d",&L,&M)!=EOF){
-		if(!L && !M) break;
-		int a[10001]={0}; //数组必须要定义在主循环内，否则可能会有值被改变；
+		if(!L&&!M) break; //长度个数都为0，跳出循环 
+		int a[10010]={0},sum=0;
 		while(M--){
-			scanf("%d %d",&left,&right);
-			for(i=left;i<=right;i++){
+			scanf("%d %d",&ds1,&ds2);
+			for(i=ds1;i<=ds2;i++){ //将区间的树移走 
 				a[i]=1;
-			} 
-		} 
-		int sum=0;
-		for(i=0;i<=L;i++){ //此处i可以取到L
+			}
+		}
+		for(i=0;i<=L;i++){//遍历求树的个数 
 			if(!a[i]) sum++;
 		}
 		printf("%d\n",sum);
-	} 
+	}
 	return 0;
 }
