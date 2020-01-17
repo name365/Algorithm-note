@@ -1,5 +1,4 @@
 /*1817
-
 */
 #include <stdio.h>
 int main(){
