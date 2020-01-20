@@ -16,7 +16,7 @@ int main(){
 			cmp[num++]=sum%m;
 			sum=sum/m;
 		}while(sum!=0);
-		for(i=num-1;i>=0;i--){
+		for(i=num-1;i>=0;i--){ //ÄæĞòÊä³öÊı×é 
 			printf("%d",cmp[i]);
 		} 
 		printf("\n");
