@@ -3,7 +3,7 @@ int main(){
 	char cmp[100];
 	while(gets(cmp)){
 		int i=0;
-		if(cmp[i]>='a'&&cmp[i]<='z'){ //判断是否是小写字母 
+		if(cmp[i]>='a'&&cmp[i]<='z'){ //第一个首字母为大写 
 			cmp[i]=cmp[i]-32;
 		}
 		for(i=1;cmp[i]!='\0';i++){ //遍历字符 
