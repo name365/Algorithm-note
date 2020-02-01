@@ -17,25 +17,25 @@
 	- 根据要求的格式输入输出 
 */
 #include <stdio.h>
-typedef struct student {
+struct student {
 	char name[10],id[10];
 	int score;
-}student;
-int cmp(const void * a, const void * b) {//固定 强转
-	student *aa = (student*)a;
-	student *bb = (student*)b;
+}stu[100010]; //防止数组越界，必须大于100000 
+int cmp(const void * a, const void * b) {//按学号递增排序
+	struct student *aa = (struct student*)a;
+	struct student *bb = (struct student*)b;
 	return strcmp(aa->id,bb->id);
 }
-int cmp2(const void *a, const void *b) {
-	student *aa = (student*)a;
-	student *bb = (student*)b;
+int cmp2(const void *a, const void *b) { //按姓名的非递减字典序排序
+	struct student *aa = (struct student*)a;
+	struct student *bb = (struct student*)b;
 	int rel = strcmp(aa->name, bb->name);
 	if (!rel) return strcmp(aa->id, bb->id);
 	return rel;
 }
-int cmp3(const void *a, const void *b) {
-	student *aa = (student*)a;
-	student *bb = (student*)b;
+int cmp3(const void *a, const void *b) { //按成绩的非递减排序。当若干学生具有相同姓名或者相同成绩时，则按他们的学号递增排序。
+	struct student *aa = (struct student*)a;
+	struct student *bb = (struct student*)b;
 	int rel = aa->score - bb->score; 
 	if (!rel) return strcmp(aa->id, bb->id);
 	return rel;
@@ -44,13 +44,12 @@ int main() {
 	int n,i,c,flag=1;
 	while(scanf("%d %d",&n,&c)!=EOF){
 		if(n==0) return 0;
-		student* stu = (student *)malloc(sizeof(student)*n);
 		for(i=0;i<n;i++){
 			scanf("%s %s %d",stu[i].id,stu[i].name,&stu[i].score);
 		}
-		if(c==1)	qsort(stu,i,sizeof(student),cmp);
-		if(c==2)	qsort(stu,i,sizeof(student),cmp2);
-		if(c==3)	qsort(stu,i,sizeof(student),cmp3);
+		if(c==1)	qsort(stu,i,sizeof(struct student),cmp);
+		if(c==2)	qsort(stu,i,sizeof(struct student),cmp2);
+		if(c==3)	qsort(stu,i,sizeof(struct student),cmp3);
 		printf("Case %d:\n",flag++);
 		for(i=0;i<n;i++){
 			printf("%s %s %d\n",stu[i].id,stu[i].name,stu[i].score);
