@@ -6,13 +6,15 @@
 	- 变形的斐波那契数列数列，由非递归实现的分治。 
 */
 #include <stdio.h>
+int F(int n){
+	if(n==1)	return 1;
+	else if(n==2)	return 2;
+	return F(n-1)+F(n-2);
+}
 int main(){
-	int N,i,a[25]={0};
-	a[1]=1,a[2]=2;
-	for(i=3;i<21;i++)
-		a[i]=a[i-1]+a[i-2];
+	int N;
 	while(scanf("%d",&N)!=EOF){
-		printf("%d\n",a[N]);
+		printf("%d\n",F(N));
 	}	
 	return 0;
 }
