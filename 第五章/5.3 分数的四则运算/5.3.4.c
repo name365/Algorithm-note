@@ -29,10 +29,19 @@ Fraction multi(Fraction f1,Fraction f2){
 	result.down = f1.down * f2.down;	//分数积的分母
 	return cmp(result);	//返回结果，注意化简 
 }
+void pus(Fraction r){
+	r=cmp(r);
+	if(r.down==1)	printf("%lld",r.up);
+	else if(abs(r.up)>r.down){
+		printf("%d %d/%d",r.up/r.down,abs(r.up)%r.down,r.down);
+	}else{
+		printf("%d/%d",r.up,r.down);
+	}	
+}
 int main(){
 	Fraction f1,f2;
 	while(scanf("%d %d %d %d",&f1.up,&f1.down,&f2.up,&f2.down)!=EOF){
-		printf("%d\n",multi(f1,f2)); 
+		pus(multi(f1,f2)); 
 	}
 	return 0;
 } 
