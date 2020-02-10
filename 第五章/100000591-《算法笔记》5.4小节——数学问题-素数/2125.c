@@ -25,8 +25,8 @@ int main(){
 	int n,i;
 	Find_Prime();
 	while(scanf("%d",&n),n!=0){
-		int ans=0;
-		for(i=0;prime[i]<n;i++){
+		int ans=0;	//¼ÆÊý 
+		for(i=0;prime[i]<n;i++){	
 			for(j=i;prime[j]<n;j++){
 				if(prime[i]+prime[j]==n)	ans++;
 				if(prime[i]+prime[j]>n)	break;
