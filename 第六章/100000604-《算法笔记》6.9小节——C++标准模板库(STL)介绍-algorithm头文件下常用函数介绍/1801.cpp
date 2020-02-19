@@ -2,7 +2,6 @@
 思考
 	- N个数的最大值和最小值。N<=10000，输入的数的绝对值不大于10^6
 	- 直接调用函数 max()、min()即可 
-	
 */
 #include <stdio.h>
 #include <algorithm>
